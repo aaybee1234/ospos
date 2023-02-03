@@ -42,7 +42,6 @@ function transform_headers($array, $readonly = FALSE, $editable = TRUE)
 		$result[] = array('field' => key($element),
 			'title' => current($element),
 			'switchable' => isset($element['switchable']) ? $element['switchable'] : !preg_match('(^$|&nbsp)', current($element)),
-			'escape' => !preg_match("/(edit|phone_number|email|messages|item_pic)/", key($element)) && !(isset($element['escape']) && !$element['escape']),
 			'sortable' => isset($element['sortable']) ? $element['sortable'] : current($element) != '',
 			'checkbox' => isset($element['checkbox']) ? $element['checkbox'] : FALSE,
 			'class' => isset($element['checkbox']) || preg_match('(^$|&nbsp)', current($element)) ? 'print_hide' : '',
@@ -73,10 +72,10 @@ function get_sales_manage_table_headers()
 	if($CI->config->item('invoice_enable') == TRUE)
 	{
 		$headers[] = array('invoice_number' => $CI->lang->line('sales_invoice_number'));
-		$headers[] = array('invoice' => '&nbsp', 'sortable' => FALSE, 'escape' => FALSE);
+		$headers[] = array('invoice' => '&nbsp', 'sortable' => FALSE);
 	}
 
-	$headers[] = array('receipt' => '&nbsp', 'sortable' => FALSE, 'escape' => FALSE);
+	$headers[] = array('receipt' => '&nbsp', 'sortable' => FALSE);
 
 	return transform_headers($headers);
 }
@@ -138,10 +137,10 @@ function get_sale_data_last_row($sales)
 
 	return array(
 		'sale_id' => '-',
-		'sale_time' => $CI->lang->line('sales_total'),
-		'amount_due' => to_currency($sum_amount_due),
-		'amount_tendered' => to_currency($sum_amount_tendered),
-		'change_due' => to_currency($sum_change_due)
+		'sale_time' => '<b>'.$CI->lang->line('sales_total').'</b>',
+		'amount_due' => '<b>'.to_currency($sum_amount_due).'</b>',
+		'amount_tendered' => '<b>'. to_currency($sum_amount_tendered).'</b>',
+		'change_due' => '<b>'.to_currency($sum_change_due).'</b>'
 	);
 }
 
@@ -351,8 +350,8 @@ function get_items_manage_table_headers()
 		$headers[] = array($definition_id => $definition_name, 'sortable' => FALSE);
 	}
 
-	$headers[] = array('inventory' => '', 'escape' => FALSE);
-	$headers[] = array('stock' => '', 'escape' => FALSE);
+	$headers[] = array('inventory' => '');
+	$headers[] = array('stock' => '');
 
 	return transform_headers($headers);
 }
@@ -718,9 +717,9 @@ function get_expenses_data_last_row($expense)
 
 	return array(
 		'expense_id' => '-',
-		'date' => $CI->lang->line('sales_total'),
-		'amount' => to_currency($sum_amount_expense),
-		'tax_amount' => to_currency($sum_tax_amount_expense)
+		'date' => '<b>'.$CI->lang->line('sales_total').'</b>',
+		'amount' => '<b>'. to_currency($sum_amount_expense).'</b>',
+		'tax_amount' => '<b>'. to_currency($sum_tax_amount_expense).'</b>'
 	);
 }
 

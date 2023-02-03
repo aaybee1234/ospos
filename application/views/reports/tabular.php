@@ -55,8 +55,7 @@
 				data: <?php echo json_encode($data); ?>,
 				iconSize: 'sm',
 				paginationVAlign: 'bottom',
-				escape: false,
-				search: true
+				escape: false
 		});
 
 

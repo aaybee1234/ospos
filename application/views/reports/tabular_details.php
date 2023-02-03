@@ -66,7 +66,6 @@
 				paginationVAlign: 'bottom',
 				detailView: true,
 				escape: false,
-				search: true,
 				onPageChange: init_dialog,
 				onPostBody: function() {
 					dialog_support.init("a.modal-dlg");

@@ -1,6 +1,4 @@
-[unreleased]: https://github.com/opensourcepos/opensourcepos/compare/3.3.8...HEAD
-[3.3.7]: https://github.com/opensourcepos/opensourcepos/compare/3.3.7...3.3.8
-[3.3.6]: https://github.com/opensourcepos/opensourcepos/compare/3.3.6...3.3.7
+[unreleased]: https://github.com/opensourcepos/opensourcepos/compare/3.3.5...HEAD
 [3.3.5]: https://github.com/opensourcepos/opensourcepos/compare/3.3.4...3.3.5
 [3.3.4]: https://github.com/opensourcepos/opensourcepos/compare/3.3.3...3.3.4
 [3.3.3]: https://github.com/opensourcepos/opensourcepos/compare/3.3.2...3.3.3
@@ -32,37 +30,6 @@ All notable changes to this project will be documented here.
 List of changes in the `master` branch.
 
 - N/A
-
-## [3.3.8] - 2022-04-26
-
-- Translation updates (Flemish, Vietnamese, Thai, Azerbaijani, Spanish, French)
-- Fix logo removal issue (CSRF regression)
-- Substract refunds from total rewards as payment method
-
-## [3.3.7] - 2022-04-26
-
-- Translation updates (Thai, Indonesian, Swedish, Italian)
-- XSS fixes in bootstrap datatables
-- Invoice numbering fixes
-- Docker compose database scripts are now mounted from a container volume
-
-## [3.3.6] - 2022-01-08
-
-- Translation updates (Hungarian, Indonesian, Bosnian, Ukranian, Vietnamese, Spanish)
-- Make footer revision clickable (ref to github)
-- Minor reporting adjustments
-- Introduced new global keyboard shortcuts (see overview below)
-
-### Fixes
-
-- reCaptcha issue fix
-- Username verification bugfix
-- Clickjacking security mitigations
-- Fixes for the payment summary after refresh
-- Hardening against XSS by introducing a CSP header in the HTTP headers
-- Several CSRF and XSS fixes
-- Type juggling password fix for old logins
-
 
 ## [3.3.5] - 2021-08-26
 

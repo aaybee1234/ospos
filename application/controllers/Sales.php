@@ -627,7 +627,8 @@ class Sales extends Secure_Controller
 		if($this->sale_lib->is_invoice_mode())
 		{
 			$invoice_format = $this->config->item('sales_invoice_format');
-			// generate final invoice numbr (if using the invoice in sales by receipt mode then the invoice number can be manually entered or altered in some way
+
+			// generate final invoice number (if using the invoice in sales by receipt mode then the invoice number can be manually entered or altered in some way
 			if(!empty($invoice_format) && $invoice_number == NULL)
 			{
 				// The user can retain the default encoded format or can manually override it.  It still passes through the rendering step.
@@ -1104,15 +1105,14 @@ class Sales extends Secure_Controller
 		$data['items_module_allowed'] = $this->Employee->has_grant('items', $this->Employee->get_logged_in_employee_info()->person_id);
 		$data['change_price'] = $this->Employee->has_grant('sales_change_price', $this->Employee->get_logged_in_employee_info()->person_id);
 
-		$temp_invoice_number = $this->sale_lib->get_invoice_number();
-		$invoice_format = $this->config->item('sales_invoice_format');
+		$invoice_number = $this->sale_lib->get_invoice_number();
 
-		if ($temp_invoice_number == NULL || $temp_invoice_number == '')
+		if ($this->sale_lib->get_invoice_number() == NULL)
 		{
-			$temp_invoice_number = $this->token_lib->render($invoice_format, array(), FALSE);
+			$invoice_number = $this->config->item('sales_invoice_format');
 		}
 
-		$data['invoice_number'] = $temp_invoice_number;
+		$data['invoice_number'] = $invoice_number;
 
 		$data['print_after_sale'] = $this->sale_lib->is_print_after_sale();
 		$data['price_work_orders'] = $this->sale_lib->is_price_work_orders();

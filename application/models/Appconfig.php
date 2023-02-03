@@ -80,33 +80,24 @@ class Appconfig extends CI_Model
 		return $this->db->empty_table('app_config');
 	}
 
-	public function acquire_next_invoice_sequence($save = TRUE)
+	public function acquire_save_next_invoice_sequence()
 	{
 		$last_used = $this->get('last_used_invoice_number') + 1;
-		if($save)
-		{
-			$this->save('last_used_invoice_number', $last_used);
-		}
+		$this->save('last_used_invoice_number', $last_used);
 		return $last_used;
 	}
 
-	public function acquire_next_quote_sequence($save = TRUE)
+	public function acquire_save_next_quote_sequence()
 	{
 		$last_used = $this->get('last_used_quote_number') + 1;
-		if($save)
-		{
-			$this->save('last_used_quote_number', $last_used);
-		}
+		$this->save('last_used_quote_number', $last_used);
 		return $last_used;
 	}
 
-	public function acquire_next_work_order_sequence($save = TRUE)
+	public function acquire_save_next_work_order_sequence()
 	{
 		$last_used = $this->get('last_used_work_order_number') + 1;
-		if($save)
-		{
-			$this->save('last_used_work_order_number', $last_used);
-		}
+		$this->save('last_used_work_order_number', $last_used);
 		return $last_used;
 	}
 }

@@ -35,7 +35,6 @@ $(document).ready(function()
 			if($("#table tbody tr").length > 1) {
 				$("#payment_summary").html(response.payment_summary);
 				$("#table tbody tr:last td:first").html("");
-				$("#table tbody tr:last").css('font-weight', 'bold');
 			}
 		},
 		queryParams: function() {

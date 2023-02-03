@@ -11,9 +11,9 @@ class Token_quote_sequence extends Token
 		return 'QSEQ';
 	}
 
-	public function get_value($save = TRUE)
+	public function get_value()
 	{
-		return $this->CI->Appconfig->acquire_next_quote_sequence($save);
+		return $this->CI->Appconfig->acquire_save_next_quote_sequence();
 	}
 }
 ?>

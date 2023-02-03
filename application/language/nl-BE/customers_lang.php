@@ -1,4 +1,5 @@
-<?php
+<?php 
+
 $lang["customers_account_number"] = "Btwnummer";
 $lang["customers_account_number_duplicate"] = "Deze VAT nummer is reeds aanwezig in de database.";
 $lang["customers_available_points"] = "Beschikbare Punten";
@@ -32,7 +33,7 @@ $lang["customers_mailchimp_activity_open"] = "Email open";
 $lang["customers_mailchimp_activity_total"] = "Email verstuurd";
 $lang["customers_mailchimp_activity_unopen"] = "Email ongeopend";
 $lang["customers_mailchimp_email_client"] = "Email client";
-$lang["customers_mailchimp_info"] = "MailChimp";
+$lang["customers_mailchimp_info"] = "Mailchimp";
 $lang["customers_mailchimp_member_rating"] = "Waardering";
 $lang["customers_mailchimp_status"] = "Status";
 $lang["customers_mailchimp_vip"] = "VIP";

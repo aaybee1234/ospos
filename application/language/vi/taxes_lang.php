@@ -1,4 +1,5 @@
-<?php
+<?php 
+
 $lang["taxes_add_exception"] = "Thêm ngoại lệ";
 $lang["taxes_cascade"] = "";
 $lang["taxes_cascade_sequence"] = "";
@@ -10,7 +11,7 @@ $lang["taxes_default_tax_category"] = "Thể loại mã thuế mặc định";
 $lang["taxes_default_tax_rate"] = "Thuế suất mặc định";
 $lang["taxes_error_adding_updating"] = "Gặp lỗi khi thêm hay cập nhật Mã thuế";
 $lang["taxes_group_seq"] = "";
-$lang["taxes_jurisdiction_name"] = "Tên quyền";
+$lang["taxes_jurisdiction_name"] = "";
 $lang["taxes_name"] = "Tên";
 $lang["taxes_new"] = "Mã thuế mới";
 $lang["taxes_no_taxes"] = "";
